@@ -33,4 +33,15 @@ public class CollectPointsScript : MonoBehaviour {
 			gameManager.Health -= damageValue; //reduce health by value
 		}
 	}
+
+	void OnCollisionEnter (Collision other){
+		if (other.gameObject.tag == "Points") //if the other object has the points tag
+		{
+			Destroy(other.gameObject); //destory the other object
+			gameManager.Score += pointsValue; //increase points by value
+		}
+		if (other.gameObject.tag == "Obstacle"){ //if the other object has the obstacle tag
+			gameManager.Health -= damageValue; //reduce health by value
+		}
+	}
 }
