@@ -19,6 +19,9 @@ public class CollectPointsScript : MonoBehaviour {
 		else{//if an instance already exists
 			Destroy(this.gameObject);//destroys this
 		}
+
+		gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManagerScript>();
+
 	}
 
 
